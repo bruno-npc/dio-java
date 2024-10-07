@@ -1,0 +1,36 @@
+@startuml
+
+skin rose
+
+title iPhone - Class Diagram
+
+interface ReprodutorMusical {
+    +playMusic()
+    +pauseMusic()
+    +selectTrack(String track)
+}
+
+interface AparelhoTelefonico {
+    +makeCall(String number)
+    +answerCall()
+    +voicemail()
+}
+
+interface NavegadorInternet {
+    +openWebsite(String url)
+    +refreshPage()
+}
+
+class iPhone {
+    +model: String
+    +version: String
+    +batteryLevel: int
+
+    +iPhone(model: String, version: String)
+}
+
+iPhone ..|> ReprodutorMusical
+iPhone ..|> AparelhoTelefonico
+iPhone ..|> NavegadorInternet
+
+@enduml
